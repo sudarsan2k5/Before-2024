@@ -1,0 +1,152 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.toolbox-cont{
+    height: 5rem;
+    background-color: #023047;
+    display: flex;
+    align-items: center;
+}
+.toolbox-cont > *{
+    margin-left: 5rem;
+}
+.toolbox-priority-cont{
+    height: 3rem;
+    width: 16.5rem;
+    background-color: #0d5e87;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+.action-cont{
+    height: 3rem;
+    width: 8rem;
+    background-color: #0d5e87;
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+.action-cont > *{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #d1d8e0;
+}
+.add-btn{
+    height: 30px;
+    width: 3.5rem;
+    background-color: #003049;
+    border-radius: 6px;
+}
+.add-btn:hover{
+    background: #008000;
+}
+.remove-btn{
+    height: 30px;
+    width: 3.5rem;
+    background-color: #003049;
+    border-radius: 6px;
+}
+.remove-btn:hover{
+    background-color: #d00000;
+}
+.color{
+    height: 30px;
+    width: 3.5rem;
+    background-color: #ffb703;
+    border-radius: 6px;
+}
+.box1{
+    background-color: #168aad;
+}
+.box2{
+    background-color: #2b9348;
+}
+.box3{
+    background-color: #1e96fc;
+}
+.box4{
+    background-color: #ffa200;
+}
+.modal-cont{
+    height: 35vh;
+    width: 32vw;
+    background-color: red;
+    position: absolute;
+    top: calc((100vh - 35vh) / 2);
+    left: calc((100vw - 38vw) / 2);
+    border-radius: 1.5rem;
+    display: none;
+}
+.textarea-cont{
+    height: 100%;
+    width: 75%;
+    border: none;
+    outline: none;
+    background-color: lightpink;
+    resize: none;
+    padding: 1rem;
+    font-size: 1rem;
+}
+.priority-color-cont{
+    height: 100%;
+    width: 25%;
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.priority-color{
+    height: 2.5rem;
+    width: 4.5rem;
+    /* background-color: #00a5cf; */
+    border-radius: 10px;
+}
+.priority-box1{
+    background-color: #168aad;
+}
+.priority-box2{
+    background-color: #2b9348;
+}
+.priority-box3{
+    background-color: #1e96fc;
+}
+.priority-box4{
+    background-color: #ffa200;
+}
+.main-section{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 2rem;
+    /* align-items: center;
+    justify-content: space-around; */
+}
+.ticket-cont{
+    height: 12.5rem;
+    width: 15.5rem;
+    background-color: red;
+    border-radius: 1rem;
+}
+.ticket-color{
+    height: 2rem;
+    background: #2a9d8f;
+}
+.ticket-id{
+    height: 1rem;
+    background-color: #457b9d;
+}
+.task-area{
+    height: calc(100% - 2rem - 1rem);
+    background-color: #ffddd2;
+    padding: 0.5rem;
+    /* border-radius: 1rem; */
+}
