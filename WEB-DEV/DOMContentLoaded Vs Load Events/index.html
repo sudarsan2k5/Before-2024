@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height: 15rem;
+            width: 15rem;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://images.unsplash.com/photo-1700587085844-b96c27958df2?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    <a href="https://www.google.com">Google</a>
+    <div>
+        Hello
+    </div>
+
+    <script>
+        alert(document.readyState);
+        document.addEventListener('DOMContentLoaded', () => {
+            alert('Your DOM is ready to access');
+            alert(document.readyState);
+        });
+        window.addEventListener('load', (e) => {
+            alert('Your Image is ready');
+            alert(document.readyState);
+        });
+        window.addEventListener('beforeunload', (e) => {
+            return e.returnValue = 'Something random value';
+        });
+    </script>
+</body>
+</html>
