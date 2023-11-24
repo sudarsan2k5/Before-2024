@@ -16,7 +16,7 @@ for(let i = 0; i < rows; i++){
         }  
       sheetRow.push(cellProp);
     }
-    sheetRow.push(sheetRow);
+    sheetDB.push(sheetRow);
 }
 
 // Selector For Cell Properties
@@ -33,32 +33,73 @@ const centerAlign = alignment[1];
 const rightAlign = alignment[2];
 
 // let addressBar = document.querySelector('.address-bar');
+let activecellColorProp = '#d1d8e0';
+let inactiveColorProp = '#ecf0f1';
 
-let activeColorProp = "#d1d8e0";
-let inactiveColorProp = "#ecf0f1";
+bold.addEventListener('click', () => {
+  let address = addressBar.value;
+  let [cell, cellProp] = activecell(address);
+  
+  //Modification
+  cellProp.bold = !cellProp.bold; // Data Change
+  cell.style.fontWeight = cellProp.bold ? 'bold' : 'normal'; // UI change
+  bold.style.backgroundColor = cellProp.bold ? activecellColorProp : inactiveColorProp
+});
+italic.addEventListener('click', () => {
+  let address = addressBar.value;
+  let [cell, cellProp] = activecell(address);
+  
+  //Modification
+  cellProp.italic = !cellProp.italic; // Data Change
+  cell.style.fontStyle = cellProp.italic ? 'italic' : 'normal'; // UI change
+  italic.style.backgroundColor = cellProp.italic ? activecellColorProp : inactiveColorProp
+});
+underlined.addEventListener('click', () => {
+  let address = addressBar.value;
+  let [cell, cellProp] = activecell(address);
+  
+  //Modification
+  cellProp.underlined = !cellProp.underlined; // Data Change
+  cell.style.textDecoration = cellProp.underlined ? 'underline' : 'none'; // UI change
+  underlined.style.backgroundColor = cellProp.underlined ? activecellColorProp : inactiveColorProp
+});
+fontSize.addEventListener('change', (e) => {
+  let address = addressBar.value;
+  let [cell, cellProp] = activecell(address);
 
-//Attach Property ListNers
-bold.addEventListener('click', (e) => {
-    let address = addressBar.value;
-    let[cell, cellProp] = activecell(address);
+  cellProp.fontSize = fontSize.value;
+  cell.style.fontSize = cellProp.fontSize + 'px'; // Data Change
+  fontSize.value = cellProp.value;
+});
+fontFamily.addEventListener('change', (e) => {
+  let address = addressBar.value;
+  let [cell, cellProp] = activecell(address);
 
-    //Modification
-    cellProp.bold = !cellProp.bold; // data Change
-    cell.style.fontWeight = cellProp.bold ? 'bold' : 'normal'; // UI change(1)
-    cell.style.backgroundColor = cellProp.bold ? activeColorProp : inactiveColorProp;
+  cellProp.fontFamily = fontFamily.value;
+  cell.style.fontFamily = cellProp.fontFamily; // Data Change
+  fontFamily.value = cellProp.fontFamily;
 });
 
-function activecell(address){
-    let[rid, cid] = decodeRidCidFromAddress(address);
 
-    //Access cell and Storage Object
-    let cell = document.querySelector(`.cell[ride='${rid}'][cid="${cid}"]`);
+
+function activecell(address){
+  let [rid, cid] = decodeRIDCIDfromAddress(address);
+  // Access Cell and Obj
+  let cell = document.querySelector(`.cell[rid='${rid}'][cid='${cid}']`);
+  
+  // Check if the cell exists
+  if (cell) {
     let cellProp = sheetDB[rid][cid];
-    return [cell, cellProp]
+    return [cell, cellProp];
+  } else {
+    console.error(`Cell not found at rid=${rid}, cid=${cid}`);
+    return [null, null];
+  }
 }
-function decodeRidCidFromAddress(address){
-    // address -> "A1"
-    let rid = Number(address.slice(1) - 1); // "1" --> 0
-    let cid = Number(address.charCodeAt(0) - 65); // "A" --> 56
-    return [rid, cid];
+
+function decodeRIDCIDfromAddress(address){
+  //address --> "A1"
+  let rid = Number(address.slice(1) - 1);
+  let cid = Number(address.charCodeAt(0)) - 65;
+  return [rid, cid];
 }

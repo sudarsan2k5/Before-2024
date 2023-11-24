@@ -28,6 +28,9 @@ body{
     display: inline-block;
     margin-right: 1rem;
 }
+.cellprop-action-cont > *:hover{
+    cursor: pointer;
+}
 .font-family-prop{
     padding: 0.2rem;
 }

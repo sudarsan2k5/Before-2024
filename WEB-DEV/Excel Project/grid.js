@@ -33,7 +33,6 @@ for(let i = 0; i < rows; i++){
         
         rowCont.appendChild(cell);
         addListenerForAddressBarDisplay(cell, i, j);
-        
     }
     cellCont.appendChild(rowCont);
 }
