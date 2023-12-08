@@ -1,11 +1,12 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Fireauth from './Components/Fireauth';
-
+import Firebase from './Components/Firebase';
 function App() {
   return (
     <>
-    <Fireauth/>
+    {/* <Fireauth/> */}
+    <Firebase/>
     <h1>Hello</h1>
     </>
   );
