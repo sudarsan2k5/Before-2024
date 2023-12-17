@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Navbar styling Start */
+.nav-bar{
+    height: 5rem;
+    background-color: #ff0000;
+    display: flex;
+}
+.nav-div {
+    display: flex;
+    align-items: center; /* Center vertically */
+}
+.nav-div img{
+    height: 3rem;
+    width: 3rem;
+    padding-left: 16rem;
+}
+.home-butt{
+    display: flex;
+    margin-left: 35rem;
+}
+a{
+    text-decoration: none;
+    color: #ffff;
+}
+ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+ul button, ul li {
+    margin-right: 2rem;
+    font-weight: bold;
+}
+button{
+    background-color: #faa307;
+    border: none;
+    height: 2rem;
+    width: 4.5rem;
+}
+/* Navbar styling End */
